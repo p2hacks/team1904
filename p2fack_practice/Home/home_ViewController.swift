@@ -32,8 +32,9 @@ class home_ViewController: UIViewController,UITableViewDelegate, UITableViewData
     
     //更新
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
         super.viewWillAppear(animated)
+        load()
+        tableView.reloadData()
     }
     
     //数を指定
@@ -50,7 +51,7 @@ class home_ViewController: UIViewController,UITableViewDelegate, UITableViewData
         let days = Calendar.current.dateComponents([.day], from: date, to: now).day!
         let format = "\(days)日前"
         cell.taskTime!.text = format
-        cell.taskName!.text = task[indexPath.row].name
+        cell.taskName!.text = task[indexPath.row].name 
         return cell
     }
     
@@ -77,7 +78,6 @@ class home_ViewController: UIViewController,UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let index = indexPath.row
         task.remove(at: index)
-        //UserDefaults.standard.set(task, forKey: "TaskData" )
         save()
         tableView.reloadData()
     }
@@ -105,6 +105,6 @@ class home_ViewController: UIViewController,UITableViewDelegate, UITableViewData
         let userDefaults = UserDefaults.standard
         userDefaults.set(saveArray, forKey: ktaskdata)
         userDefaults.synchronize()
-        
     }
+    
 }

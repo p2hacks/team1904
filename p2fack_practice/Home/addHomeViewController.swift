@@ -18,6 +18,7 @@ class addHomeViewController: UIViewController,UIImagePickerControllerDelegate,UI
     var pickerView: UIPickerView = UIPickerView()
     var DPicker = DatePickerKeyboard()
     var task = [TaskData]()
+    var home = home_ViewController()
     
     //userDefaultに保存するデータのkey
     let ktaskdata = "TASK_DATA"
@@ -52,26 +53,27 @@ class addHomeViewController: UIViewController,UIImagePickerControllerDelegate,UI
         }
     }
     
+    //Done
     @IBAction func addTask(_ sender: UIBarButtonItem) {
          //let nav = self.navigationController
         // 一つ前のViewControllerを取得する
-       //  let homeViewController = nav?.viewControllers[(nav?.viewControllers.count)!-2] as! home_ViewController
+       //
+       // let homeViewController = nav?.viewControllers[(nav?.viewControllers.count)!-2] as! home_ViewController
         
         
         // 値を渡す
         let date = DateUtils.dateFromString(string: textField2.text!, format: "yyyy年MM月dd日")
-
+        task = [TaskData]()
         task.append(TaskData(day: date, name: textField.text!))
         textField.text = ""
         save()
-        
         // popする
         navigationController?.popViewController(animated: true)
     }
-
+    
+  //reload
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        load()
     }
     
     // 読み込み処理
@@ -98,10 +100,9 @@ class addHomeViewController: UIViewController,UIImagePickerControllerDelegate,UI
         let userDefaults = UserDefaults.standard
         userDefaults.set(saveArray, forKey: ktaskdata)
         userDefaults.synchronize()
-        
     }
 
-
+    //keyboard close
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
