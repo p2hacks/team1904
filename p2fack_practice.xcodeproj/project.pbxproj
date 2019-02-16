@@ -21,6 +21,11 @@
 		410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C5C22182C7500F77FAD /* AVAudioSessionPatch.m */; };
 		410E9C6C22182EC000F77FAD /* p2p.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C6A22182EC000F77FAD /* p2p.storyboard */; };
 		410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */; };
+		BA457D2E2218609000E05410 /* afterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA457D2C2218609000E05410 /* afterTableViewCell.swift */; };
+		BA457D2F2218609000E05410 /* afterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA457D2D2218609000E05410 /* afterTableViewCell.xib */; };
+		BA457D312218618500E05410 /* daytask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA457D302218618500E05410 /* daytask.storyboard */; };
+		BA457D332218669900E05410 /* Daytask_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA457D322218669900E05410 /* Daytask_ViewController.swift */; };
+		BA457D35221876F900E05410 /* firstDTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA457D34221876F900E05410 /* firstDTViewController.swift */; };
 		E868A563220E46A0006F419B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A562220E46A0006F419B /* AppDelegate.swift */; };
 		E868A56A220E46A6006F419B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E868A569220E46A6006F419B /* Assets.xcassets */; };
 		E868A56D220E46A6006F419B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A56B220E46A6006F419B /* LaunchScreen.storyboard */; };
@@ -48,6 +53,11 @@
 		410E9C6822182D1E00F77FAD /* p2fack_practice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "p2fack_practice-Bridging-Header.h"; sourceTree = "<group>"; };
 		410E9C6A22182EC000F77FAD /* p2p.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = p2p.storyboard; sourceTree = "<group>"; };
 		410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p2p_ViewController.swift; sourceTree = "<group>"; };
+		BA457D2C2218609000E05410 /* afterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = afterTableViewCell.swift; sourceTree = "<group>"; };
+		BA457D2D2218609000E05410 /* afterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = afterTableViewCell.xib; sourceTree = "<group>"; };
+		BA457D302218618500E05410 /* daytask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = daytask.storyboard; sourceTree = "<group>"; };
+		BA457D322218669900E05410 /* Daytask_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daytask_ViewController.swift; sourceTree = "<group>"; };
+		BA457D34221876F900E05410 /* firstDTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstDTViewController.swift; sourceTree = "<group>"; };
 		E868A55F220E46A0006F419B /* p2fack_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = p2fack_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E868A562220E46A0006F419B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E868A569220E46A6006F419B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +84,7 @@
 		410E9C5222182C7500F77FAD /* src */ = {
 			isa = PBXGroup;
 			children = (
+				BA457D2B22185FD500E05410 /* daytask */,
 				410E9C5322182C7500F77FAD /* audio */,
 				410E9C5822182C7500F77FAD /* model */,
 				410E9C5A22182C7500F77FAD /* Objectve-c */,
@@ -117,6 +128,15 @@
 				410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */,
 			);
 			path = p2p;
+			sourceTree = "<group>";
+		};
+		BA457D2B22185FD500E05410 /* daytask */ = {
+			isa = PBXGroup;
+			children = (
+				BA457D302218618500E05410 /* daytask.storyboard */,
+				BA457D322218669900E05410 /* Daytask_ViewController.swift */,
+			);
+			path = daytask;
 			sourceTree = "<group>";
 		};
 		E868A556220E46A0006F419B = {
@@ -185,8 +205,11 @@
 		E868A58B220FFD46006F419B /* Calender */ = {
 			isa = PBXGroup;
 			children = (
+				BA457D2C2218609000E05410 /* afterTableViewCell.swift */,
+				BA457D2D2218609000E05410 /* afterTableViewCell.xib */,
 				E868A57F220FF2E3006F419B /* Calender.storyboard */,
 				E868A58C220FFD69006F419B /* cale_ViewController.swift */,
+				BA457D34221876F900E05410 /* firstDTViewController.swift */,
 			);
 			path = Calender;
 			sourceTree = "<group>";
@@ -249,7 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA457D312218618500E05410 /* daytask.storyboard in Resources */,
 				410E9C5F22182C7500F77FAD /* 僕は嫌だ.mp3 in Resources */,
+				BA457D2F2218609000E05410 /* afterTableViewCell.xib in Resources */,
 				E868A580220FF2E3006F419B /* Calender.storyboard in Resources */,
 				E868A586220FFBC2006F419B /* Main.storyboard in Resources */,
 				410E9C6C22182EC000F77FAD /* p2p.storyboard in Resources */,
@@ -271,7 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA457D35221876F900E05410 /* firstDTViewController.swift in Sources */,
+				BA457D2E2218609000E05410 /* afterTableViewCell.swift in Sources */,
 				410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */,
+				BA457D332218669900E05410 /* Daytask_ViewController.swift in Sources */,
 				E868A58D220FFD69006F419B /* cale_ViewController.swift in Sources */,
 				410E9C4B22182C3800F77FAD /* TableViewCell.swift in Sources */,
 				410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */,
