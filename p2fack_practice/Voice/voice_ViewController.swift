@@ -123,7 +123,7 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
         let now = getNowTime()
         let url = docsDirect.appendingPathComponent("recording" + now + ".m4a")
         print(url.path)
-        recordedVoices.append(RecordedVoice(path: url.path, name: "recording.m4a"))
+        recordedVoices.append(RecordedVoice(path: url.path, name: "recording" + now + ".m4a"))
         return url
     }
     func getNowTime() -> String {
