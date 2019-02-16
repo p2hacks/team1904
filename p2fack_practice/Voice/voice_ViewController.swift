@@ -51,6 +51,10 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
               // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     //再生する音声をセット
     func setAudioPlayer(audioPath:String){
         let audioUrl = URL(fileURLWithPath: audioPath)
@@ -110,6 +114,7 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
         audioRecorder.delegate = self
         audioRecorder.record()
         
+        save()
     }
     
     func getURL() -> URL{
@@ -226,5 +231,13 @@ extension voice_ViewController: UITableViewDataSource, UITableViewDelegate{
             
         }
     
+    }
+    
+    //cell削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        recordedVoices.remove(at: index)
+        save()
+        tableView.reloadData()
     }
 }

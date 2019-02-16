@@ -29,7 +29,7 @@ class RecordedVoice: NSObject {
     }
     
     func dictionaryFromVoice() -> [String:Any]{
-        return [kPath : path]
+        return [kPath : path, kName: name]
     }
     
 }

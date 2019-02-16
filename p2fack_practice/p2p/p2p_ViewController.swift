@@ -8,38 +8,34 @@
 
 import UIKit
 import MultipeerConnectivity
+import AVFoundation
 
 class p2p_ViewController: UIViewController, MCBrowserViewControllerDelegate,
-MCSessionDelegate{
+MCSessionDelegate,AVAudioPlayerDelegate{
     
     
 
     let serviceType = "LCOC-Chat"
-    
+    let kRecordedVoices = "RECORDED_VOICES"
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
+
+    var audioPlayer = AVAudioPlayer()
     
-    @IBOutlet weak var chatView: UITextView!
-    @IBOutlet weak var messageField: UITextField!
+    var recordedVoices = [RecordedVoice]()
+    
+    
+    @IBOutlet weak var textField: UITextField!
     
     @IBAction func sendChat(_ sender: Any) {
-        
-        if mcSession.connectedPeers.count > 0 {
-            if let msg = self.messageField.text?.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-                do {
-                    try mcSession.send(msg, toPeers: mcSession.connectedPeers, with: .reliable)
-                } catch let error as NSError {
-                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                }
-            }
+        if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            
+            let filePath = dir.appendingPathComponent( "recording.m4a" )
+            sendAudio2(url: filePath)
+            print("ok")
         }
-        
-        self.updateChat(text: self.messageField.text!, fromPeer: self.peerID)
-        
-        self.messageField.text = ""
+        //sendAudio(audioData: recordedVoices[0])
     }
     
     @IBAction func showBrowser(sender: UIButton) {
@@ -53,6 +49,13 @@ MCSessionDelegate{
         mcBrowser.delegate = self
         present(mcBrowser, animated: true)
     }
+    
+    @IBAction func openTable(_ sender: Any) {
+        guard let rootViewController = rootViewController() else {
+            return }
+        rootViewController.presentMenuViewController()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,8 +63,36 @@ MCSessionDelegate{
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self
         
+        loadVoice()
     }
     
+    // 読み込み処理
+    func loadVoice() {
+        // Dictionary配列を読み込み
+        let userDefaults = UserDefaults.standard
+        if let loadArray = userDefaults.array(forKey: kRecordedVoices) as? [[String: Any]] {
+            // Dictionary配列->ToDo配列に変換
+            loadArray.forEach({ item in
+                recordedVoices.append(RecordedVoice(dictionary: item))
+            })
+        }
+    }
+    //String送信
+    func sendString(str: String){
+        if mcSession.connectedPeers.count > 0 {
+            if let msg = str.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                do {
+                    try mcSession.send(msg, toPeers: mcSession.connectedPeers, with: .reliable)
+                } catch let error as NSError {
+                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(ac, animated: true)
+                }
+            }
+        }
+    }
+    
+    //画像送信
     func sendImage(img: UIImage) {
         if mcSession.connectedPeers.count > 0 {
             if let imageData = img.pngData() {
@@ -76,6 +107,51 @@ MCSessionDelegate{
         }
     }
     
+    //音声送信
+    func sendAudio(audioData: RecordedVoice) {
+        
+        let url = URL(fileURLWithPath: audioData.path)
+        if mcSession.connectedPeers.count > 0 {
+                mcSession.sendResource(at: url, withName: audioData.name, toPeer: mcSession!.connectedPeers[0]) {(error) in
+                    if error != nil{
+                            let ac = UIAlertController(title: "Send error", message: error!.localizedDescription, preferredStyle: .alert)
+                            ac.addAction(UIAlertAction(title: "OK", style: .default))
+                            self.present(ac, animated: true)
+                    }
+            }
+        }
+    }
+    
+    // 保存処理
+    func saveAudio() {
+        var saveArray = [[String: Any]]()
+        
+        //VoiceRecorded配列->Dictionary配列に変換
+        recordedVoices.forEach ({ item in
+            saveArray.append(item.dictionaryFromVoice())
+        })
+        // Dictionary配列を保存
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(saveArray, forKey: kRecordedVoices)
+        userDefaults.synchronize()
+        
+    }
+
+    
+    //音声送信
+    func sendAudio2(url: URL) {
+        
+        if mcSession.connectedPeers.count > 0 {
+            mcSession.sendResource(at: url, withName: "name", toPeer: mcSession!.connectedPeers[0]) {(error) in
+                if error != nil{
+                    let ac = UIAlertController(title: "Send error", message: error!.localizedDescription, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                }
+            }
+        }
+    }
+   
     func updateChat(text : String, fromPeer peerID: MCPeerID) {
         // Appends some text to the chat view
         
@@ -92,7 +168,7 @@ MCSessionDelegate{
         
         // Add the name to the message and display it
         let message = "\(name): \(text)\n"
-        self.chatView.text = self.chatView.text + message
+      
         
     }
     
@@ -116,7 +192,7 @@ MCSessionDelegate{
         
         if let msg = NSString(data: data, encoding: String.Encoding.utf8.rawValue){
             DispatchQueue.main.async { [unowned self] in
-                self.updateChat(text: msg as String, fromPeer: peerID)
+                self.textField.text = msg as String
             }
         }
     }
@@ -128,7 +204,29 @@ MCSessionDelegate{
     }
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        print("\(localURL?.lastPathComponent)" + ":" + "\(resourceName)")
+        
+        renameTmpFile(localURL: localURL!, resourceName: resourceName)
     }
+    
+    func renameTmpFile(localURL: URL, resourceName: String){
+        let _: String = NSTemporaryDirectory()
+        
+        if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            //let renamedPath = dir.path + "/" + resourceName + ".m4a"
+            let renamedPath = dir.path + "/" + localURL.lastPathComponent + ".m4a"
+            do {
+                try FileManager.default.moveItem(atPath: localURL.path, toPath:renamedPath)
+                recordedVoices.append(RecordedVoice(path: renamedPath, name: resourceName))
+                
+                saveAudio()
+            } catch {
+                print(localURL.path + ": " + renamedPath)
+                print("error")
+            }
+        }
+    }
+    
     @IBAction func hide(_ sender: Any) {
         super.didReceiveMemoryWarning()
     }
