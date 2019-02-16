@@ -120,10 +120,21 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
     func getURL() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("recording.m4a")
+        let now = getNowTime()
+        let url = docsDirect.appendingPathComponent("recording" + now + ".m4a")
         print(url.path)
         recordedVoices.append(RecordedVoice(path: url.path, name: "recording.m4a"))
         return url
+    }
+    func getNowTime() -> String {
+        let now = NSDate()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        
+        let string = formatter.string(from: now as Date)
+        
+        return string
     }
     
     // 読み込み処理
