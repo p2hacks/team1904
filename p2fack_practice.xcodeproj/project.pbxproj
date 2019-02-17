@@ -134,6 +134,13 @@
 			path = p2p;
 			sourceTree = "<group>";
 		};
+		E81243DF22190D8200B4AA32 /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		E868A556220E46A0006F419B = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +175,7 @@
 		E868A583220FFB0B006F419B /* No Touch */ = {
 			isa = PBXGroup;
 			children = (
+				E81243DF22190D8200B4AA32 /* image */,
 				E868A56B220E46A6006F419B /* LaunchScreen.storyboard */,
 				E868A569220E46A6006F419B /* Assets.xcassets */,
 				E868A585220FFBC2006F419B /* Main.storyboard */,
