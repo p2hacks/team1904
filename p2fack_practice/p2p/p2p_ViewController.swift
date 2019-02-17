@@ -17,6 +17,8 @@ MCSessionDelegate,AVAudioPlayerDelegate{
 
     let serviceType = "LCOC-Chat"
     let kRecordedVoices = "RECORDED_VOICES"
+    let ktaskdata = "TASK_DATA"
+    
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
@@ -32,25 +34,17 @@ MCSessionDelegate,AVAudioPlayerDelegate{
     
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var Hosting_bool: UITextField!
+    @IBOutlet weak var sendObject: UITextView!
     
     
     @IBAction func sendChat(_ sender: Any) {
         if isAudio {
             print("sendAudio")
-            /*if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
-                
-                let filePath = dir.appendingPathComponent(recordedVoice.name)
-                print("\(filePath)")
-                sendAudio2(url: filePath)
- }*/
             sendAudio(audioData: recordedVoice)
         } else {
             print("isAudio is false")
-            sendAudio(audioData: recordedVoice)
+            sendData(data: taskData)
         }
-        
-        
-        //sendAudio(audioData: recordedVoices[0])
     }
     
     @IBAction func showBrowser(sender: UIButton) {
@@ -76,19 +70,10 @@ MCSessionDelegate,AVAudioPlayerDelegate{
         mcSession.delegate = self
         
         loadVoice()
+        loadTask()
     }
     
-    // 読み込み処理
-    func loadVoice() {
-        // Dictionary配列を読み込み
-        let userDefaults = UserDefaults.standard
-        if let loadArray = userDefaults.array(forKey: kRecordedVoices) as? [[String: Any]] {
-            // Dictionary配列->ToDo配列に変換
-            loadArray.forEach({ item in
-                recordedVoices.append(RecordedVoice(dictionary: item))
-            })
-        }
-    }
+ 
     //String送信
     func sendString(str: String){
         if mcSession.connectedPeers.count > 0 {
@@ -101,6 +86,19 @@ MCSessionDelegate,AVAudioPlayerDelegate{
                     present(ac, animated: true)
                 }
             }
+        }
+    }
+    
+    //String送信
+    func sendData(data: NSObject){
+        if mcSession.connectedPeers.count > 0 {
+                do {
+                    try mcSession.send(data as! Data, toPeers: mcSession.connectedPeers, with: .reliable)
+                } catch let error as NSError {
+                    let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(ac, animated: true)
+                }
         }
     }
     
@@ -167,7 +165,43 @@ MCSessionDelegate,AVAudioPlayerDelegate{
         
     }
     
+    // 保存処理
+    func saveData() {
+        var saveArray = [[String: Any]]()
+        
+        //VoiceRecorded配列->Dictionary配列に変換
+        taskDatas.forEach ({ item in
+            saveArray.append(item.dictionaryFromTask())
+        })
+        // Dictionary配列を保存
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(saveArray, forKey: ktaskdata)
+        userDefaults.synchronize()
+    }
     
+    // 読み込み処理
+    func loadVoice() {
+        // Dictionary配列を読み込み
+        let userDefaults = UserDefaults.standard
+        if let loadArray = userDefaults.array(forKey: kRecordedVoices) as? [[String: Any]] {
+            // Dictionary配列->ToDo配列に変換
+            loadArray.forEach({ item in
+                recordedVoices.append(RecordedVoice(dictionary: item))
+            })
+        }
+    }
+    
+    // 読み込み処理
+    func loadTask() {
+        // Dictionary配列を読み込み
+        let userDefaults = UserDefaults.standard
+        if let loadArray = userDefaults.array(forKey: ktaskdata) as? [[String: Any]] {
+            // Dictionary配列->ToDo配列に変換
+            loadArray.forEach({ item in
+                taskDatas.append(TaskData(dictionary: item))
+            })
+        }
+    }
    
     func updateChat(text : String, fromPeer peerID: MCPeerID) {
         // Appends some text to the chat view
@@ -215,6 +249,7 @@ MCSessionDelegate,AVAudioPlayerDelegate{
                 
             }
         }
+        
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -238,9 +273,16 @@ MCSessionDelegate,AVAudioPlayerDelegate{
             let renamedPath = dir.path + "/" + resourceName
             do {
                 try FileManager.default.moveItem(atPath: localURL.path, toPath:renamedPath)
-                recordedVoices.append(RecordedVoice(path: renamedPath, name: resourceName))
+                let ac = UIAlertController(title: "アラート", message: resourceName + "を保存してもよろしいですか？", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler:{
+                    (UIAlertAction) -> Void in
+                    self.recordedVoices.append(RecordedVoice(path: renamedPath, name: resourceName))
+                    
+                    self.saveAudio()
+                }))
+                ac.addAction(UIAlertAction(title: "Cancel", style: .default))
+                present(ac, animated: true)
                 
-                saveAudio()
             } catch {
                 print(localURL.path + ": " + renamedPath)
                 print("error")

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TaskData{
+class TaskData: NSObject{
     var day:Date = Date()
     var name:String = ""
     
     let kday = "DAY"
     let kname = "NAME"
     
-    init() {
+    override init() {
         
     }
 
