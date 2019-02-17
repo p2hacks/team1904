@@ -9,27 +9,26 @@
 import UIKit
 
 class firstDTViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
-    
-    @IBOutlet weak var TtoC: UIButton!
-    
 
    
     @IBOutlet weak var tableView: UITableView!
     
-    var received = taskDate()
+    var received = [TaskData]()
     
     let TODO = ["選択をする", "布団を洗う"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return TODO.count
+        return received.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "afterTableViewCell", for: indexPath) as! afterTableViewCell
         // セルに表示する値を設定する
-        cell.aftertaskName =
-        return cell    }
+        cell.aftertaskName.text = received[indexPath.row].name
+        return cell
+        
+    }
     
 
     @IBOutlet weak var TView: UITableView!

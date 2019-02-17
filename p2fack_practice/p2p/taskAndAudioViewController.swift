@@ -116,7 +116,7 @@ extension taskAndAudioViewController: UITableViewDelegate, UITableViewDataSource
         case 1:
             p2pViewController.recordedVoice = recordedVoices[indexPath.row]
             p2pViewController.isAudio = true
-            p2pViewController.sendObject.text = "send " + recordedVoices[indexPath.row].name
+            p2pViewController.sendObject.text = p2pViewController.sendObject.text + "send " + recordedVoices[indexPath.row].name + "\n"
             // popする
             _ = navigationController?.popViewController(animated: true)
 

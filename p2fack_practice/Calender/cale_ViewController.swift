@@ -20,6 +20,7 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
     var cal = Calendar.current
     let dateFormatter = DateFormatter()
     var components = DateComponents()
+    var data = [TaskData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,13 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
         components.month = cal.component(.month, from: now)
         components.day = 1
         calculation()
+        makeTaskData()
+    }
+    
+    func makeTaskData(){
+        data.append(TaskData(day: now, name: "髪を切る"))
+        data.append(TaskData(day: now, name: "茶碗洗う"))
+        data.append(TaskData(day: now, name: "スーツのクリーニング"))
     }
     
     func calculation(){
@@ -70,6 +78,7 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
             if (((indexPath.row + weekdayAdding) == 14)&&(components.year == 2019)&&(components.month == 2)){
                 cell.backgroundColor = #colorLiteral(red: 0.032, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+                
             }
             let label = UILabel()
             label.font = UIFont(name: "Arial", size: 17)
@@ -110,7 +119,10 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "Test") as! firstDTViewController
+        
+        secondViewController.received = data
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
     @IBAction func myActionZengetsu(_ sender: Any) {

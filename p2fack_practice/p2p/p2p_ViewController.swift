@@ -279,6 +279,8 @@ MCSessionDelegate,AVAudioPlayerDelegate{
                     self.recordedVoices.append(RecordedVoice(path: renamedPath, name: resourceName))
                     
                     self.saveAudio()
+                    
+                    self.sendObject.text = self.sendObject.text + "receive " + resourceName + "\n"
                 }))
                 ac.addAction(UIAlertAction(title: "Cancel", style: .default))
                 present(ac, animated: true)

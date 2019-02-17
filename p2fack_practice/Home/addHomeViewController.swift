@@ -35,6 +35,7 @@ class addHomeViewController: UIViewController,UIImagePickerControllerDelegate,UI
         voice.leftViewMode = .always
         voice.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         // Do any additional setup after loading the view.
+         task.removeAll()
         load()
     }
     
@@ -74,6 +75,7 @@ class addHomeViewController: UIViewController,UIImagePickerControllerDelegate,UI
   //reload
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
     }
     
     // 読み込み処理
