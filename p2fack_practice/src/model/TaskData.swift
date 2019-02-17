@@ -8,12 +8,16 @@
 
 import UIKit
 
-class TaskData: NSObject {
+class TaskData{
     var day:Date = Date()
     var name:String = ""
     
     let kday = "DAY"
     let kname = "NAME"
+    
+    init() {
+        
+    }
 
     init(day: Date, name: String) {
         self.day = day

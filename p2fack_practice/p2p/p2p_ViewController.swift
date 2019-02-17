@@ -27,6 +27,8 @@ MCSessionDelegate,AVAudioPlayerDelegate{
     
     var recordedVoice = RecordedVoice()
     var recordedVoices = [RecordedVoice]()
+    var taskData = TaskData()
+    var taskDatas = [TaskData]()
     
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var Hosting_bool: UITextField!
