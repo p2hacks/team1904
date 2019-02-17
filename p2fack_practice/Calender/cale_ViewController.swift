@@ -15,8 +15,8 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var zengetsuButton: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    
     let now = Date()
+    var text: String?
     var cal = Calendar.current
     let dateFormatter = DateFormatter()
     var components = DateComponents()
@@ -52,6 +52,14 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
         let firstWeekday = cal.component(.weekday, from: firstDayOfMonth!)
         //weekdayAdding: 1日が何曜日かで変わるindexPath.rowに加える値
         let weekdayAdding = 2 - firstWeekday
+        let syear:String = "\(components.year)"
+        let smonth:String = "\(components.month)"
+        let sday:String = "\(indexPath.row + weekdayAdding)"
+        text = syear + smonth + sday
+        print(text)
+        //DateUtils.stringFromDate(date: , format: String)
+        
+        
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
@@ -60,6 +68,9 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
         //1日〜月末まで表示し、余ったCellは空白にする
         if (indexPath.row + weekdayAdding) >= 1 && (indexPath.row + weekdayAdding) <= daysCountInMonth! {
             cell.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+            if (((indexPath.row + weekdayAdding) == 14)&&(components.year == 2019)&&(components.month == 2)){
+                cell.backgroundColor = #colorLiteral(red: 0.032, green: 0.937254902, blue: 0.9568627451, alpha: 1)
+            }
             let label = UILabel()
             label.font = UIFont(name: "Arial", size: 17)
             label.text = "\(indexPath.row + weekdayAdding)"
@@ -69,6 +80,9 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
             //label.center = cell.contentView.center
             cell.contentView.addSubview(label)
             
+           /* if (text == textField2.text!){
+                
+ }*/
         }
         else{
             cell.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
@@ -96,7 +110,7 @@ class cale_ViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
     }
     
     @IBAction func myActionZengetsu(_ sender: Any) {
