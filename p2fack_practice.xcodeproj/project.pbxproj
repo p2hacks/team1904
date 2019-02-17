@@ -29,6 +29,7 @@
 		E868A586220FFBC2006F419B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A585220FFBC2006F419B /* Main.storyboard */; };
 		E868A58A220FFCD0006F419B /* voice_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A589220FFCD0006F419B /* voice_ViewController.swift */; };
 		E868A58D220FFD69006F419B /* cale_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A58C220FFD69006F419B /* cale_ViewController.swift */; };
+		E88C18BB2218514A00AEB7D0 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C18BA2218514A00AEB7D0 /* TaskData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		E868A585220FFBC2006F419B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E868A589220FFCD0006F419B /* voice_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voice_ViewController.swift; sourceTree = "<group>"; };
 		E868A58C220FFD69006F419B /* cale_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cale_ViewController.swift; sourceTree = "<group>"; };
+		E88C18BA2218514A00AEB7D0 /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				410E9C5922182C7500F77FAD /* VoiceRecordData.swift */,
+				E88C18BA2218514A00AEB7D0 /* TaskData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -164,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				410E9C4822182C3800F77FAD /* addHomeViewController.swift */,
-				410E9C4622182C3800F77FAD /* data.swift */,
 				410E9C4922182C3800F77FAD /* home_ViewController.swift */,
+				410E9C4622182C3800F77FAD /* data.swift */,
 				410E9C4422182C3800F77FAD /* Home.storyboard */,
 				410E9C4522182C3800F77FAD /* TableViewCell.swift */,
 				410E9C4722182C3800F77FAD /* TableViewCell.xib */,
@@ -274,6 +277,7 @@
 				410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */,
 				E868A58D220FFD69006F419B /* cale_ViewController.swift in Sources */,
 				410E9C4B22182C3800F77FAD /* TableViewCell.swift in Sources */,
+				E88C18BB2218514A00AEB7D0 /* TaskData.swift in Sources */,
 				410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */,
 				E868A563220E46A0006F419B /* AppDelegate.swift in Sources */,
 				410E9C4F22182C3900F77FAD /* home_ViewController.swift in Sources */,
@@ -419,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CXL7F9J64Z;
+				DEVELOPMENT_TEAM = 65Z68H8WQ6;
 				INFOPLIST_FILE = p2fack_practice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,7 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CXL7F9J64Z;
+				DEVELOPMENT_TEAM = 65Z68H8WQ6;
 				INFOPLIST_FILE = p2fack_practice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
