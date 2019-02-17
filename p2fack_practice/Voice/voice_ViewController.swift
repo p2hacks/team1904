@@ -51,6 +51,15 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
               // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+            // NavigationControllerで表示された時に実行する内容
+    }
     //再生する音声をセット
     func setAudioPlayer(audioPath:String){
         let audioUrl = URL(fileURLWithPath: audioPath)
@@ -110,15 +119,28 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
         audioRecorder.delegate = self
         audioRecorder.record()
         
+        save()
     }
     
     func getURL() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("recording.m4a")
+        let now = getNowTime()
+        let url = docsDirect.appendingPathComponent("recording" + now + ".m4a")
         print(url.path)
-        recordedVoices.append(RecordedVoice(path: url.path, name: "recording.m4a"))
+        recordedVoices.append(RecordedVoice(path: url.path, name: "recording" + now + ".m4a"))
         return url
+    }
+    
+    func getNowTime() -> String {
+        let now = NSDate()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        
+        let string = formatter.string(from: now as Date)
+        
+        return string
     }
     
     // 読み込み処理
@@ -226,5 +248,13 @@ extension voice_ViewController: UITableViewDataSource, UITableViewDelegate{
             
         }
     
+    }
+    
+    //cell削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        recordedVoices.remove(at: index)
+        save()
+        tableView.reloadData()
     }
 }

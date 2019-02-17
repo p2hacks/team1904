@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordedVoice: NSObject {
+class RecordedVoice{
     var path:String = ""
     var name:String = ""
     
@@ -17,6 +17,10 @@ class RecordedVoice: NSObject {
     let kName = "NAME"
     
     var audioPlayer: AVAudioPlayer!
+    
+    init() {
+        
+    }
     
     init(path: String, name: String) {
         self.path = path
@@ -29,7 +33,7 @@ class RecordedVoice: NSObject {
     }
     
     func dictionaryFromVoice() -> [String:Any]{
-        return [kPath : path]
+        return [kPath : path, kName: name]
     }
     
 }
