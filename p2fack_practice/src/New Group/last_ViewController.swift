@@ -1,5 +1,5 @@
 //
-//  Daytask_ViewController.swift
+//  last_ViewController.swift
 //  p2fack_practice
 //
 //  Created by 佐々木真矢 on 2019/02/17.
@@ -8,12 +8,8 @@
 
 import UIKit
 
-class Daytask_ViewController: UIViewController {
+class last_ViewController: UIViewController {
 
-  
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
