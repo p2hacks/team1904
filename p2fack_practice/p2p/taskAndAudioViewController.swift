@@ -16,7 +16,7 @@ class taskAndAudioViewController: UIViewController {
     
     let kRecordedVoices = "RECORDED_VOICES"
     let kTaskList = "TaskList"
-    let sections = ["default", "recorded"]
+    let sections = ["task", "recorded"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,12 +95,20 @@ extension taskAndAudioViewController: UITableViewDelegate, UITableViewDataSource
     
     //セルタップ時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = storyboard?.instantiateViewController(withIdentifier: "p2p_ViewController") as! p2p_ViewController
+        let nav = self.navigationController
+        // 一つ前のViewControllerを取得する
+        let p2pViewController = nav?.viewControllers[(nav?.viewControllers.count)!-2] as! p2p_ViewController
         switch indexPath.section{
         case 0:
-            storyBoard.sendString(str: taskList[indexPath.row])
+            p2pViewController.sendString(str: taskList[indexPath.row])
         case 1:
-            storyBoard.sendAudio(audioData: recordedVoices[indexPath.row])
+            p2pViewController.recordedVoice = recordedVoices[indexPath.row]
+            p2pViewController.isAudio = true
+            // popする
+            _ = navigationController?.popViewController(animated: true)
+
+            print("case 1")
+            //storyBoard.sendAudio(audioData: recordedVoices[indexPath.row])
         default:
             break
         }

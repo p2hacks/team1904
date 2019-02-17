@@ -52,9 +52,14 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+            // NavigationControllerで表示された時に実行する内容
+    }
     //再生する音声をセット
     func setAudioPlayer(audioPath:String){
         let audioUrl = URL(fileURLWithPath: audioPath)
@@ -126,6 +131,7 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
         recordedVoices.append(RecordedVoice(path: url.path, name: "recording" + now + ".m4a"))
         return url
     }
+    
     func getNowTime() -> String {
         let now = NSDate()
         
