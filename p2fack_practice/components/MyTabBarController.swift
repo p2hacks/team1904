@@ -16,10 +16,8 @@ class MyTabBarController: UITabBarController {
         UITabBar.appearance().tintColor = UIColor(red: 239/255, green: 176/255, blue: 84/255, alpha: 1.0) // yellow
 
         // 背景色
-        UITabBar.appearance().barTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0) // grey black
-        // Do any additional setup after loading the view.
+        UITabBar.appearance().barTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
     }
-    
 
     /*
     // MARK: - Navigation

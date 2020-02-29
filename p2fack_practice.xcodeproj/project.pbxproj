@@ -9,49 +9,24 @@
 /* Begin PBXBuildFile section */
 		1557AFE5240AAC48005A6F93 /* alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1557AFE4240AAC48005A6F93 /* alarm.storyboard */; };
 		1557AFE7240AACBF005A6F93 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */; };
-		1557AFEA240AB1DF005A6F93 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */; };
-		410E9C4A22182C3800F77FAD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C4422182C3800F77FAD /* Home.storyboard */; };
-		410E9C4B22182C3800F77FAD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4522182C3800F77FAD /* TableViewCell.swift */; };
-		410E9C4C22182C3900F77FAD /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4622182C3800F77FAD /* data.swift */; };
-		410E9C4D22182C3900F77FAD /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C4722182C3800F77FAD /* TableViewCell.xib */; };
-		410E9C4E22182C3900F77FAD /* addHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4822182C3800F77FAD /* addHomeViewController.swift */; };
-		410E9C4F22182C3900F77FAD /* home_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4922182C3800F77FAD /* home_ViewController.swift */; };
 		410E9C5E22182C7500F77FAD /* あんたは私の何を知る.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5422182C7500F77FAD /* あんたは私の何を知る.mp3 */; };
 		410E9C5F22182C7500F77FAD /* 僕は嫌だ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5522182C7500F77FAD /* 僕は嫌だ.mp3 */; };
 		410E9C6022182C7500F77FAD /* 好きだったこの場所.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5622182C7500F77FAD /* 好きだったこの場所.mp3 */; };
 		410E9C6122182C7500F77FAD /* 黒い羊 2 .mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5722182C7500F77FAD /* 黒い羊 2 .mp3 */; };
 		410E9C6222182C7500F77FAD /* VoiceRecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C5922182C7500F77FAD /* VoiceRecordData.swift */; };
 		410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C5C22182C7500F77FAD /* AVAudioSessionPatch.m */; };
-		410E9C6C22182EC000F77FAD /* p2p.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C6A22182EC000F77FAD /* p2p.storyboard */; };
-		410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */; };
-		410E9C6F2218384000F77FAD /* taskAndAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C6E2218384000F77FAD /* taskAndAudioViewController.swift */; };
-		410E9C722218544A00F77FAD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C712218544A00F77FAD /* RootViewController.swift */; };
-		410E9C742218E1B200F77FAD /* selectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C732218E1B200F77FAD /* selectedView.xib */; };
-		410E9C762218E2EC00F77FAD /* selectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C752218E2EC00F77FAD /* selectedView.swift */; };
-		410E9C782219201F00F77FAD /* afterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C772219201F00F77FAD /* afterTableViewCell.swift */; };
-		410E9C7A2219202900F77FAD /* firstDTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C792219202900F77FAD /* firstDTViewController.swift */; };
-		410E9C7C2219206800F77FAD /* afterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C7B2219206800F77FAD /* afterTableViewCell.xib */; };
 		E868A563220E46A0006F419B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A562220E46A0006F419B /* AppDelegate.swift */; };
 		E868A56A220E46A6006F419B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E868A569220E46A6006F419B /* Assets.xcassets */; };
 		E868A56D220E46A6006F419B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A56B220E46A6006F419B /* LaunchScreen.storyboard */; };
 		E868A57E220FF2A5006F419B /* Voice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A57D220FF2A5006F419B /* Voice.storyboard */; };
-		E868A580220FF2E3006F419B /* Calender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A57F220FF2E3006F419B /* Calender.storyboard */; };
 		E868A586220FFBC2006F419B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E868A585220FFBC2006F419B /* Main.storyboard */; };
 		E868A58A220FFCD0006F419B /* voice_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A589220FFCD0006F419B /* voice_ViewController.swift */; };
-		E868A58D220FFD69006F419B /* cale_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E868A58C220FFD69006F419B /* cale_ViewController.swift */; };
 		E88C18BB2218514A00AEB7D0 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C18BA2218514A00AEB7D0 /* TaskData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1557AFE4240AAC48005A6F93 /* alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = alarm.storyboard; sourceTree = "<group>"; };
 		1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
-		1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
-		410E9C4422182C3800F77FAD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		410E9C4522182C3800F77FAD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		410E9C4622182C3800F77FAD /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
-		410E9C4722182C3800F77FAD /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		410E9C4822182C3800F77FAD /* addHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addHomeViewController.swift; sourceTree = "<group>"; };
-		410E9C4922182C3800F77FAD /* home_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = home_ViewController.swift; sourceTree = "<group>"; };
 		410E9C5422182C7500F77FAD /* あんたは私の何を知る.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あんたは私の何を知る.mp3"; sourceTree = "<group>"; };
 		410E9C5522182C7500F77FAD /* 僕は嫌だ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "僕は嫌だ.mp3"; sourceTree = "<group>"; };
 		410E9C5622182C7500F77FAD /* 好きだったこの場所.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "好きだったこの場所.mp3"; sourceTree = "<group>"; };
@@ -60,25 +35,14 @@
 		410E9C5B22182C7500F77FAD /* AVAudioSessionPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAudioSessionPatch.h; sourceTree = "<group>"; };
 		410E9C5C22182C7500F77FAD /* AVAudioSessionPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAudioSessionPatch.m; sourceTree = "<group>"; };
 		410E9C6822182D1E00F77FAD /* p2fack_practice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "p2fack_practice-Bridging-Header.h"; sourceTree = "<group>"; };
-		410E9C6A22182EC000F77FAD /* p2p.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = p2p.storyboard; sourceTree = "<group>"; };
-		410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = p2p_ViewController.swift; sourceTree = "<group>"; };
-		410E9C6E2218384000F77FAD /* taskAndAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskAndAudioViewController.swift; sourceTree = "<group>"; };
-		410E9C712218544A00F77FAD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		410E9C732218E1B200F77FAD /* selectedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = selectedView.xib; sourceTree = "<group>"; };
-		410E9C752218E2EC00F77FAD /* selectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedView.swift; sourceTree = "<group>"; };
-		410E9C772219201F00F77FAD /* afterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = afterTableViewCell.swift; sourceTree = "<group>"; };
-		410E9C792219202900F77FAD /* firstDTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstDTViewController.swift; sourceTree = "<group>"; };
-		410E9C7B2219206800F77FAD /* afterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = afterTableViewCell.xib; sourceTree = "<group>"; };
 		E868A55F220E46A0006F419B /* p2fack_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = p2fack_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E868A562220E46A0006F419B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E868A569220E46A6006F419B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E868A56C220E46A6006F419B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E868A56E220E46A6006F419B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E868A57D220FF2A5006F419B /* Voice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Voice.storyboard; sourceTree = "<group>"; };
-		E868A57F220FF2E3006F419B /* Calender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calender.storyboard; sourceTree = "<group>"; };
 		E868A585220FFBC2006F419B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E868A589220FFCD0006F419B /* voice_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voice_ViewController.swift; sourceTree = "<group>"; };
-		E868A58C220FFD69006F419B /* cale_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cale_ViewController.swift; sourceTree = "<group>"; };
 		E88C18BA2218514A00AEB7D0 /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +69,6 @@
 		1557AFE8240AB14B005A6F93 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -150,19 +113,6 @@
 			path = "Objectve-c";
 			sourceTree = "<group>";
 		};
-		410E9C6922182EC000F77FAD /* p2p */ = {
-			isa = PBXGroup;
-			children = (
-				410E9C6A22182EC000F77FAD /* p2p.storyboard */,
-				410E9C6B22182EC000F77FAD /* p2p_ViewController.swift */,
-				410E9C6E2218384000F77FAD /* taskAndAudioViewController.swift */,
-				410E9C712218544A00F77FAD /* RootViewController.swift */,
-				410E9C732218E1B200F77FAD /* selectedView.xib */,
-				410E9C752218E2EC00F77FAD /* selectedView.swift */,
-			);
-			path = p2p;
-			sourceTree = "<group>";
-		};
 		E81243DF22190D8200B4AA32 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,10 +145,7 @@
 				1557AFE8240AB14B005A6F93 /* components */,
 				E868A583220FFB0B006F419B /* No Touch */,
 				1557AFE3240AABBC005A6F93 /* Alarm */,
-				E868A587220FFC7F006F419B /* Home */,
-				410E9C6922182EC000F77FAD /* p2p */,
 				E868A588220FFC95006F419B /* Voice */,
-				E868A58B220FFD46006F419B /* Calender */,
 			);
 			path = p2fack_practice;
 			sourceTree = "<group>";
@@ -214,19 +161,6 @@
 			path = "No Touch";
 			sourceTree = "<group>";
 		};
-		E868A587220FFC7F006F419B /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				410E9C4822182C3800F77FAD /* addHomeViewController.swift */,
-				410E9C4922182C3800F77FAD /* home_ViewController.swift */,
-				410E9C4622182C3800F77FAD /* data.swift */,
-				410E9C4422182C3800F77FAD /* Home.storyboard */,
-				410E9C4522182C3800F77FAD /* TableViewCell.swift */,
-				410E9C4722182C3800F77FAD /* TableViewCell.xib */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		E868A588220FFC95006F419B /* Voice */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,18 +168,6 @@
 				E868A589220FFCD0006F419B /* voice_ViewController.swift */,
 			);
 			path = Voice;
-			sourceTree = "<group>";
-		};
-		E868A58B220FFD46006F419B /* Calender */ = {
-			isa = PBXGroup;
-			children = (
-				E868A57F220FF2E3006F419B /* Calender.storyboard */,
-				410E9C7B2219206800F77FAD /* afterTableViewCell.xib */,
-				410E9C772219201F00F77FAD /* afterTableViewCell.swift */,
-				E868A58C220FFD69006F419B /* cale_ViewController.swift */,
-				410E9C792219202900F77FAD /* firstDTViewController.swift */,
-			);
-			path = Calender;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,15 +230,9 @@
 			files = (
 				410E9C5F22182C7500F77FAD /* 僕は嫌だ.mp3 in Resources */,
 				1557AFE5240AAC48005A6F93 /* alarm.storyboard in Resources */,
-				E868A580220FF2E3006F419B /* Calender.storyboard in Resources */,
 				E868A586220FFBC2006F419B /* Main.storyboard in Resources */,
-				410E9C6C22182EC000F77FAD /* p2p.storyboard in Resources */,
-				410E9C7C2219206800F77FAD /* afterTableViewCell.xib in Resources */,
-				410E9C4D22182C3900F77FAD /* TableViewCell.xib in Resources */,
 				410E9C6122182C7500F77FAD /* 黒い羊 2 .mp3 in Resources */,
 				E868A56D220E46A6006F419B /* LaunchScreen.storyboard in Resources */,
-				410E9C742218E1B200F77FAD /* selectedView.xib in Resources */,
-				410E9C4A22182C3800F77FAD /* Home.storyboard in Resources */,
 				410E9C5E22182C7500F77FAD /* あんたは私の何を知る.mp3 in Resources */,
 				410E9C6022182C7500F77FAD /* 好きだったこの場所.mp3 in Resources */,
 				E868A56A220E46A6006F419B /* Assets.xcassets in Resources */,
@@ -333,21 +249,9 @@
 			files = (
 				410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */,
 				1557AFE7240AACBF005A6F93 /* AlarmViewController.swift in Sources */,
-				E868A58D220FFD69006F419B /* cale_ViewController.swift in Sources */,
-				410E9C782219201F00F77FAD /* afterTableViewCell.swift in Sources */,
-				410E9C722218544A00F77FAD /* RootViewController.swift in Sources */,
-				410E9C4B22182C3800F77FAD /* TableViewCell.swift in Sources */,
-				410E9C7A2219202900F77FAD /* firstDTViewController.swift in Sources */,
 				E88C18BB2218514A00AEB7D0 /* TaskData.swift in Sources */,
-				410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */,
 				E868A563220E46A0006F419B /* AppDelegate.swift in Sources */,
-				410E9C4F22182C3900F77FAD /* home_ViewController.swift in Sources */,
-				1557AFEA240AB1DF005A6F93 /* MyTabBarController.swift in Sources */,
-				410E9C4C22182C3900F77FAD /* data.swift in Sources */,
-				410E9C6F2218384000F77FAD /* taskAndAudioViewController.swift in Sources */,
 				E868A58A220FFCD0006F419B /* voice_ViewController.swift in Sources */,
-				410E9C4E22182C3900F77FAD /* addHomeViewController.swift in Sources */,
-				410E9C762218E2EC00F77FAD /* selectedView.swift in Sources */,
 				410E9C6222182C7500F77FAD /* VoiceRecordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
