@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1557AFE5240AAC48005A6F93 /* alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1557AFE4240AAC48005A6F93 /* alarm.storyboard */; };
 		1557AFE7240AACBF005A6F93 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */; };
+		1557AFEA240AB1DF005A6F93 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */; };
 		410E9C4A22182C3800F77FAD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C4422182C3800F77FAD /* Home.storyboard */; };
 		410E9C4B22182C3800F77FAD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4522182C3800F77FAD /* TableViewCell.swift */; };
 		410E9C4C22182C3900F77FAD /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E9C4622182C3800F77FAD /* data.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		1557AFE4240AAC48005A6F93 /* alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = alarm.storyboard; sourceTree = "<group>"; };
 		1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		410E9C4422182C3800F77FAD /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		410E9C4522182C3800F77FAD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		410E9C4622182C3800F77FAD /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 				1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		1557AFE8240AB14B005A6F93 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				1557AFE9240AB1DF005A6F93 /* MyTabBarController.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		410E9C5222182C7500F77FAD /* src */ = {
@@ -182,7 +192,9 @@
 				410E9C5222182C7500F77FAD /* src */,
 				E868A562220E46A0006F419B /* AppDelegate.swift */,
 				E868A56E220E46A6006F419B /* Info.plist */,
+				1557AFE8240AB14B005A6F93 /* components */,
 				E868A583220FFB0B006F419B /* No Touch */,
+				1557AFE3240AABBC005A6F93 /* Alarm */,
 				E868A587220FFC7F006F419B /* Home */,
 				410E9C6922182EC000F77FAD /* p2p */,
 				E868A588220FFC95006F419B /* Voice */,
@@ -198,7 +210,6 @@
 				E868A56B220E46A6006F419B /* LaunchScreen.storyboard */,
 				E868A569220E46A6006F419B /* Assets.xcassets */,
 				E868A585220FFBC2006F419B /* Main.storyboard */,
-				1557AFE3240AABBC005A6F93 /* Alarm */,
 			);
 			path = "No Touch";
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				410E9C6D22182EC000F77FAD /* p2p_ViewController.swift in Sources */,
 				E868A563220E46A0006F419B /* AppDelegate.swift in Sources */,
 				410E9C4F22182C3900F77FAD /* home_ViewController.swift in Sources */,
+				1557AFEA240AB1DF005A6F93 /* MyTabBarController.swift in Sources */,
 				410E9C4C22182C3900F77FAD /* data.swift in Sources */,
 				410E9C6F2218384000F77FAD /* taskAndAudioViewController.swift in Sources */,
 				E868A58A220FFCD0006F419B /* voice_ViewController.swift in Sources */,

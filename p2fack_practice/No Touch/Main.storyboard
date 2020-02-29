@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="uG9-IQ-Jd8">
             <objects>
-                <tabBarController id="Gdq-9I-Uz8" sceneMemberID="viewController">
+                <tabBarController id="Gdq-9I-Uz8" customClass="MyTabBarController" customModule="p2fack_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w0c-ZJ-d1F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
