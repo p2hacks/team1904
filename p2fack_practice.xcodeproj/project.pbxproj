@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1557AFE5240AAC48005A6F93 /* alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1557AFE4240AAC48005A6F93 /* alarm.storyboard */; };
 		1557AFE7240AACBF005A6F93 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */; };
+		15E40FA9240B9C4900FD153B /* SleepingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40FA8240B9C4900FD153B /* SleepingViewController.swift */; };
+		15E40FAB240B9D7D00FD153B /* CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40FAA240B9D7D00FD153B /* CurrentTime.swift */; };
+		15E40FAD240B9E1400FD153B /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E40FAC240B9E1400FD153B /* Alarm.swift */; };
 		410E9C5E22182C7500F77FAD /* あんたは私の何を知る.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5422182C7500F77FAD /* あんたは私の何を知る.mp3 */; };
 		410E9C5F22182C7500F77FAD /* 僕は嫌だ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5522182C7500F77FAD /* 僕は嫌だ.mp3 */; };
 		410E9C6022182C7500F77FAD /* 好きだったこの場所.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 410E9C5622182C7500F77FAD /* 好きだったこの場所.mp3 */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		1557AFE4240AAC48005A6F93 /* alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = alarm.storyboard; sourceTree = "<group>"; };
 		1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		15E40FA8240B9C4900FD153B /* SleepingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepingViewController.swift; sourceTree = "<group>"; };
+		15E40FAA240B9D7D00FD153B /* CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTime.swift; sourceTree = "<group>"; };
+		15E40FAC240B9E1400FD153B /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		410E9C5422182C7500F77FAD /* あんたは私の何を知る.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あんたは私の何を知る.mp3"; sourceTree = "<group>"; };
 		410E9C5522182C7500F77FAD /* 僕は嫌だ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "僕は嫌だ.mp3"; sourceTree = "<group>"; };
 		410E9C5622182C7500F77FAD /* 好きだったこの場所.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "好きだったこの場所.mp3"; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			children = (
 				1557AFE4240AAC48005A6F93 /* alarm.storyboard */,
 				1557AFE6240AACBF005A6F93 /* AlarmViewController.swift */,
+				15E40FA8240B9C4900FD153B /* SleepingViewController.swift */,
+				15E40FAA240B9D7D00FD153B /* CurrentTime.swift */,
+				15E40FAC240B9E1400FD153B /* Alarm.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -249,9 +258,12 @@
 			files = (
 				410E9C6322182C7500F77FAD /* AVAudioSessionPatch.m in Sources */,
 				1557AFE7240AACBF005A6F93 /* AlarmViewController.swift in Sources */,
+				15E40FAD240B9E1400FD153B /* Alarm.swift in Sources */,
 				E88C18BB2218514A00AEB7D0 /* TaskData.swift in Sources */,
 				E868A563220E46A0006F419B /* AppDelegate.swift in Sources */,
+				15E40FA9240B9C4900FD153B /* SleepingViewController.swift in Sources */,
 				E868A58A220FFCD0006F419B /* voice_ViewController.swift in Sources */,
+				15E40FAB240B9D7D00FD153B /* CurrentTime.swift in Sources */,
 				410E9C6222182C7500F77FAD /* VoiceRecordData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

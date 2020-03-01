@@ -40,29 +40,78 @@
             <objects>
                 <viewController id="S4O-Rv-ORB" customClass="AlarmViewController" customModule="p2fack_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="esP-fS-AJc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-s3-zVw">
-                                <rect key="frame" x="166" y="252" width="42" height="21"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-mJ-NNz">
+                                <rect key="frame" x="0.0" y="162" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0o-qO-qNt">
+                                <rect key="frame" x="164" y="461" width="46" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="alarmBtnWasPressed:" destination="S4O-Rv-ORB" eventType="touchUpInside" id="UaB-eG-NKZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Qdm-g0-XI5"/>
                     </view>
                     <navigationItem key="navigationItem" id="imh-tc-8Fw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="sleepTimePicker" destination="JwO-mJ-NNz" id="dgJ-uZ-9ae"/>
+                        <segue destination="3Km-wm-9Hp" kind="show" identifier="toSecond" id="cvo-AN-TKs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va5-WI-3Db" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1521" y="115"/>
+            <point key="canvasLocation" x="-1522.4000000000001" y="114.69265367316342"/>
+        </scene>
+        <!--Sleeping View Controller-->
+        <scene sceneID="ep7-Eg-W1l">
+            <objects>
+                <viewController storyboardIdentifier="setToSleeping" id="3Km-wm-9Hp" customClass="SleepingViewController" customModule="p2fack_practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iUq-tg-F1s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmd-pU-hT0">
+                                <rect key="frame" x="107" y="230" width="101" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-o8-y4h">
+                                <rect key="frame" x="166" y="474" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="closeBtnWasPressed:" destination="3Km-wm-9Hp" eventType="touchUpInside" id="H2R-J2-7ph"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5As-Mc-Ecc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KGX-4e-pVG"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="Hmd-pU-hT0" id="fH4-Nf-L0I"/>
+                        <segue destination="S4O-Rv-ORB" kind="show" identifier="dismiss" id="ZIG-u9-UPH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTd-Rs-54N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735.20000000000005" y="114.69265367316342"/>
         </scene>
     </scenes>
     <resources>
         <image name="alerm" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZIG-u9-UPH"/>
+    </inferredMetricsTieBreakers>
 </document>
