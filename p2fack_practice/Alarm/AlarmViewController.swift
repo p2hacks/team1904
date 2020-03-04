@@ -11,18 +11,23 @@ import UIKit
 class AlarmViewController: UIViewController {
     //インスタンスを生成
     let alarm = Alarm()
-    let voice = voice_ViewController()
+    var voice = voice_ViewController()
     
         @IBOutlet weak var sleepTimePicker: UIDatePicker!
-
+    @IBOutlet weak var musicPicker: UIPickerView!
     @IBOutlet weak var startBtn: UIButton!
+        let defaults = ["あんたは私の何を知る", "好きだったこの場所", "黒い羊 2 ", "僕は嫌だ"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.voice = voice_ViewController()
         buttonSetting()
         //UIDatePickerを.timeモードにする
         sleepTimePicker.datePickerMode = UIDatePicker.Mode.time
         //現在の時間をDatePickerに表示
         sleepTimePicker.setDate(Date(), animated: false)
+       musicPicker.delegate = self
+        musicPicker.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -50,8 +55,24 @@ class AlarmViewController: UIViewController {
             alarm.stopTimer()
         }
     }
+}
+    extension AlarmViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
+       // ドラムロールの列数
+       func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+       
+       // ドラムロールの行数
+       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return  voice.sections.count
+       }
+       
+   // ドラムロールの各タイトル
+       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return defaults[row]
+       }
+
     /*
      // MARK: - Navigation
      

@@ -26,7 +26,7 @@ class voice_ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioReco
     var audioPlayer:AVAudioPlayer!
     var audioRecorder: AVAudioRecorder!
     //録音音声保存用のデータクラス
-   public var recordedVoices = [RecordedVoice]()
+   var recordedVoices = [RecordedVoice]()
     //デフォルトで入れておく音声
     var defautVoices = [RecordedVoice]()
 
